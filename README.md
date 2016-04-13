@@ -65,8 +65,9 @@ to see the available properties.
 
 ```
 Give AppComponent a selector 'myApp' which will be linked to the
-<my-app>Loading...</my-app> tag inside index.html. Give AppComponent 
-a template.
+<my-app>Loading...</my-app> tag inside index.html. 
+
+Give AppComponent a template.
 
 Go back to main.ts and import AppComponent and bootstrap it like this:
 bootstrap(AppComponent, []);
@@ -160,6 +161,8 @@ Injectable.
 Just now we were fine when PeopleService didn't have any dependencies. 
 Now that we added one the injector complains about the fact that it doesn't know how to resolve the dependencies.
 We have to annotate our PeopleService so the injector knows that it has to inject dependencies based on their types.
+
+[InjectableMetadata](https://angular.io/docs/ts/latest/api/core/InjectableMetadata-class.html)
 
 ```
 Annotate PeopleService with @Injectable().
