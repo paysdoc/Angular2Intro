@@ -61,7 +61,9 @@ Create a component named AppComponent (app.component.ts) and export its class.
 
 Click inside of the Component's decorator { } and hit ctrl+space
 to see the available properties.
+```
 
+```
 Give AppComponent a selector 'myApp' which will be linked to the
 <my-app>Loading...</my-app> tag inside index.html.
 
