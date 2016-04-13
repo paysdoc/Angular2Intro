@@ -65,7 +65,8 @@ to see the available properties.
 
 ```
 Give AppComponent a selector 'myApp' which will be linked to the
-<my-app>Loading...</my-app> tag inside index.html.
+<my-app>Loading...</my-app> tag inside index.html. Give AppComponent 
+a template.
 
 Go back to main.ts and import AppComponent and bootstrap it like this:
 bootstrap(AppComponent, []);
