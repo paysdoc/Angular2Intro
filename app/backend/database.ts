@@ -30,11 +30,17 @@ export class Database {
      * implementation.
      * @type {{people: {all: Person[], create: (function(IPerson): Person), update: (function(number, IPerson): *|null)}}}
      */
-    private static database = {
+    public static database = {
         people: {
             all: [
                 new Person({firstName: 'Jan', lastName: 'Berg', id: 1}),
-                new Person({firstName: 'Karel', lastName: 'de Vries', id: 2})
+                new Person({firstName: 'Karel', lastName: 'de Vries', id: 2}),
+                new Person({firstName: 'Tara', lastName: 'Jansen', id: 3}),
+                new Person({firstName: 'Hans', lastName: 'Smeets', id: 4}),
+                new Person({firstName: 'Joep', lastName: 'Beek', id: 5}),
+                new Person({firstName: 'Yvette', lastName: 'Achternaam', id: 6}),
+                new Person({firstName: 'Gijs', lastName: 'Gans', id: 7}),
+                new Person({firstName: 'Kim', lastName: 'Duin', id: 8})
             ],
             create: (data:IPerson) => {
                 var firstName = data.firstName,
@@ -116,4 +122,10 @@ export class Database {
             }
         }
     }
+}
+let localStorage = <any>window.localStorage;
+if(!!localStorage.people) {
+    Database.database.people.all = JSON.parse(localStorage.people);
+}else {
+    (<any>window.localStorage).people = JSON.stringify(Database.database.people.all);
 }
